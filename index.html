@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NYC Retro Beach Racers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="hud"><div id="room"></div><div id="lb"></div><div id="msg"></div><div id="prog"></div><div id="spd"></div></div>
+
+<section id="p1" class="page on">
+  <h1 class="neon">NYC RETRO<br>BEACH RACERS</h1>
+  <input id="nick" maxlength="12" placeholder="Твой никнейм" autocomplete="off">
+  <button id="toGarage">В гараж</button>
+</section>
+
+<section id="p2" class="page">
+  <h2 class="neon">Гараж</h2>
+  <canvas id="prev" width="380" height="230"></canvas>
+  <div class="row"><button id="prevCar">&#9664;</button><b id="carName"></b><button id="nextCar">&#9654;</button></div>
+  <label class="row">Цвет кузова <input type="color" id="col" value="#ff2e63"></label>
+  <div id="stats"></div>
+  <button id="toTrack">Выбрать трассу</button>
+</section>
+
+<section id="p3" class="page">
+  <h2 class="neon">Трасса</h2>
+  <div class="row">
+    <div class="card sel" id="tb" data-t="beach"><i></i><b>Кони-Айленд</b><small>Пляж и пальмы</small></div>
+    <div class="card" id="tc" data-t="city"><i></i><b>Манхэттен ночью</b><small>Неон и небоскрёбы</small></div>
+  </div>
+  <div class="row" id="lvs"></div>
+  <div class="row"><button id="startSolo">Один с ботами</button><button id="hostBtn">Создать комнату</button></div>
+  <div class="row"><input id="code" maxlength="5" placeholder="Код комнаты"><button id="joinBtn">Войти по коду</button></div>
+  <div id="err"></div>
+</section>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script>window.Peer||document.write('<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"><\/script>')</script>
+<script src="game.js"></script>
+</body>
+</html>
